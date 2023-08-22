@@ -1,4 +1,4 @@
-import { CssBaseline, Grid, Typography } from "@mui/material";
+import { CssBaseline, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 
@@ -16,7 +16,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Nunito, sans-serif",
+    fontFamily: "Nunito, sans-serif", // primary font
   },
 });
 
