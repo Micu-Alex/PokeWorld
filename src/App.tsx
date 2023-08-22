@@ -1,20 +1,20 @@
-import { Grid, ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline, Grid, ThemeProvider, createTheme } from "@mui/material";
 import NavBar from "./components/NavBar";
 
 // Create a custom theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
-      light: "#42a5f5",
-      dark: "#1565c0",
-      contrastText: "#fff", // Customize with your desired color
+      main: "#fe7d0b", // Your primary color
     },
     secondary: {
-      main: "#ce93d8",
-      light: "#f3e5f5",
-      dark: "#ab47bc",
-      contrastText: "#fff", // Customize with your desired color
+      main: "#fffcb3", // Your secondary color
+    },
+    background: {
+      default: "#fff0f0", // Your background color
+    },
+    text: {
+      primary: "#330002", // Your text color
     },
   },
 });
@@ -22,6 +22,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <NavBar />
