@@ -6,14 +6,18 @@ const NavBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
+        <IconButton edge="start" color="inherit">
           <CatchingPokemonSharpIcon />
         </IconButton>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
           Pokémon World
         </Typography>
-        <Button color="inherit">Home</Button>
-        <Button color="inherit">Pokémon</Button>
+        <Button color="inherit" sx={{ fontWeight: 700 }}>
+          Home
+        </Button>
+        <Button color="inherit" sx={{ fontWeight: 700 }}>
+          Pokémon
+        </Button>
         {/* Add more navigation buttons or links as needed */}
       </Toolbar>
     </AppBar>

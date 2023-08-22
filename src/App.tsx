@@ -1,21 +1,22 @@
-import { CssBaseline, Grid, ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline, Grid, Typography } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 
 // Create a custom theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#fe7d0b", // Your primary color
+      main: "#fe7d0b", // primary color
     },
     secondary: {
-      main: "#fffcb3", // Your secondary color
+      main: "#fffcb3", // secondary color
     },
     background: {
-      default: "#fff0f0", // Your background color
+      default: "#fff0f0", // background color
     },
-    text: {
-      primary: "#330002", // Your text color
-    },
+  },
+  typography: {
+    fontFamily: "Nunito, sans-serif",
   },
 });
 
