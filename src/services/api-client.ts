@@ -1,13 +1,13 @@
 import axios from "axios";
 
-interface FetchResponse<T> {
+export interface FetchResponse<T> {
     count: number;
-    next: string | null
+    next: string | null;
     results: T[];
 }
 
 const axiosInstance = axios.create({
-    baseURL: "https://pokeapi.co/api/v2/pokemon"})
+    baseURL: "https://pokeapi.co/api/v2"})
 
 class APIClient<T> {
     endpoint:  string;

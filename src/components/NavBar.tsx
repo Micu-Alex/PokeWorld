@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 
