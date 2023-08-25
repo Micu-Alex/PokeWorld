@@ -1,3 +1,4 @@
+import { useQuery } from "react-query";
 import APIClient from "../services/api-client";
 
 
@@ -17,6 +18,11 @@ interface Pokemon {
 
 const apiClient= new APIClient<Pokemon>("/pokemon")
 
-const useGames = () => {
+const usePokemons = () => 
+  useQuery({
+    queryKey: ["pokemons"],
+    queryFn: apiClient.getAll
+  })
 
-}
+
+export default usePokemons

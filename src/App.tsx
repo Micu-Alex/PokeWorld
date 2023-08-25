@@ -1,8 +1,7 @@
 import { CssBaseline, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
-import { useState, useEffect } from "react";
-import APIClient, { FetchResponse } from "./services/api-client";
+import usePokemons from "./hooks/usePokemons";
 
 // Create a custom theme
 const theme = createTheme({
@@ -23,7 +22,7 @@ const theme = createTheme({
 });
 
 function App() {
-  const [pokemonData, setPokemonData] = useState<any>(null);
+  const { data } = usePokemons();
 
   return (
     <ThemeProvider theme={theme}>
@@ -33,16 +32,14 @@ function App() {
           <NavBar />
         </Grid>
         <Grid item xs={12}>
-          {/* Display the fetched data */}
-          {pokemonData && (
-            <div>
-              <h2>{pokemonData.name}</h2>
-              <img src={} alt={pokemonData.name} />
-              <p>Height: {pokemonData.height}</p>
-              <p>Weight: {pokemonData.weight}</p>
-              {/* Add more information as needed */}
-            </div>
-          )}
+          <div>
+            <h1>Pokémon List</h1>
+            <ul>
+              {data?.map((pokemon) => (
+                <li key={pokemon.name}>{pokemon.name}</li>
+              ))}
+            </ul>
+          </div>
         </Grid>
         {/* Add more Grid items for different sections */}
       </Grid>
