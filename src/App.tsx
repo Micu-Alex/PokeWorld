@@ -25,16 +25,6 @@ const theme = createTheme({
 function App() {
   const [pokemonData, setPokemonData] = useState<any>(null);
 
-  useEffect(() => {
-    // Create an instance of APIClient
-    const api = new APIClient<FetchResponse<any>>("/pokemon");
-
-    // Fetch data using APIClient
-    api.get("35").then((data) => {
-      setPokemonData(data);
-    });
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -47,6 +37,7 @@ function App() {
           {pokemonData && (
             <div>
               <h2>{pokemonData.name}</h2>
+              <img src={} alt={pokemonData.name} />
               <p>Height: {pokemonData.height}</p>
               <p>Weight: {pokemonData.weight}</p>
               {/* Add more information as needed */}
