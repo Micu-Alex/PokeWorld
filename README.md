@@ -1,27 +1,56 @@
-# React + TypeScript + Vite
+# Pokémon React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Pokémon React App! This project showcases the usage of various technologies to create a simple application for fetching and displaying Pokémon data.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
 
-## Expanding the ESLint configuration
+  - A JavaScript library for building user interfaces. It allows you to create reusable UI components and manage the state of your application efficiently.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [TypeScript](https://www.typescriptlang.org/)
 
-- Configure the top-level `parserOptions` property like this:
+  - TypeScript is a superset of JavaScript that adds static types to your code. It enhances code quality, provides better tooling support, and helps catch errors during development.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- [Axios](https://axios-http.com/)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  - Axios is a promise-based HTTP client for making API requests in the browser and Node.js. It simplifies data fetching and response handling.
+
+- [React Query](https://react-query.tanstack.com/)
+
+  - React Query is a data-fetching library for React applications. It provides tools for caching, fetching, and updating remote data seamlessly. It also supports optimistic updates and invalidation.
+
+- [PokéAPI](https://pokeapi.co/)
+
+  - The PokéAPI is a RESTful API that provides comprehensive information about Pokémon species, their abilities, types, and more. This project uses the API to fetch Pokémon data.
+
+- [Material-UI](https://mui.com/)
+  - Material-UI is a popular React UI framework that provides pre-designed components following the Material Design guidelines. It enables you to create visually appealing and responsive user interfaces.
+
+## Project Structure
+
+The project follows a modular structure to keep the code organized and maintainable:
+
+- `src/`
+  - `components/`: Contains React components used in the application.
+  - `services/`: Houses the API client implementation (`APIClient`) and any other data-related logic.
+  - `hooks/`: Custom React hooks used for data fetching (e.g., `useGames`).
+  - `App.tsx`: The main application component.
+  - `index.tsx`: The entry point of the application.
+
+## Getting Started
+
+1. Clone this repository: `git clone https://github.com/your-username/pokemon-react-app.git`
+2. Navigate to the project directory: `cd pokemon-react-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+
+The app will be accessible at [http://localhost:3000](http://localhost:3000).
+
+## Contributing
+
+Contributions are welcome! If you find issues or want to add new features, feel free to submit a pull request. Please ensure code follows best practices and is well-documented.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
