@@ -40,7 +40,7 @@ The project follows a modular structure to keep the code organized and maintaina
 
 ## Getting Started
 
-1. Clone this repository: `git clone https://github.com/your-username/pokemon-react-app.git`
+1. Clone this repository: `git clone https://github.com/Micu-Alex/pokemon-react-app.git`
 2. Navigate to the project directory: `cd pokemon-react-app`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
