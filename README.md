@@ -50,7 +50,3 @@ The app will be accessible at [http://localhost:3000](http://localhost:3000).
 ## Contributing
 
 Contributions are welcome! If you find issues or want to add new features, feel free to submit a pull request. Please ensure code follows best practices and is well-documented.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE)
