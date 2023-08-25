@@ -43,9 +43,9 @@ The project follows a modular structure to keep the code organized and maintaina
 1. Clone this repository: `https://github.com/Micu-Alex/PokeWorld.git`
 2. Navigate to the project directory: `cd PokeWorld`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
+4. Start the development server: `npm run dev`
 
-The app will be accessible at [http://localhost:3000](http://localhost:3000).
+The app will be accessible at [http://localhost:5173](http://localhost:5173).
 
 ## Contributing
 
