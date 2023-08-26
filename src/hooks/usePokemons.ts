@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import APIClient from "../services/api-client";
 
 
-export interface Pokemon {
+interface Pokemon {
     id: number;
     name: string;
     height: number;
@@ -19,11 +19,11 @@ export interface Pokemon {
 
 const apiClient= new APIClient<Pokemon>("/pokemon")
 
-const usePokemons = () => 
+
+  const usePokemons = () => 
   useQuery({
     queryKey: ["pokemons"],
     queryFn: apiClient.getAll
   })
 
-
-export default usePokemons
+  export  default usePokemons
