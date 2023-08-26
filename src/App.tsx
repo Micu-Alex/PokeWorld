@@ -2,6 +2,7 @@ import { CssBaseline, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import usePokemons from "./hooks/usePokemons";
+import PokemonGrid from "./components/PokemonGrid";
 
 // Create a custom theme
 const theme = createTheme({
@@ -32,14 +33,7 @@ function App() {
           <NavBar />
         </Grid>
         <Grid item xs={12}>
-          <div>
-            <h1>Pokémon List</h1>
-            <ul>
-              {data?.map((pokemon) => (
-                <li key={pokemon.name}>{pokemon.name}</li>
-              ))}
-            </ul>
-          </div>
+          <PokemonGrid />
         </Grid>
         {/* Add more Grid items for different sections */}
       </Grid>
