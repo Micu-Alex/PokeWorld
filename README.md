@@ -46,7 +46,3 @@ The project follows a modular structure to keep the code organized and maintaina
 4. Start the development server: `npm run dev`
 
 The app will be accessible at [http://localhost:5173](http://localhost:5173).
-
-## Contributing
-
-Contributions are welcome! If you find issues or want to add new features, feel free to submit a pull request. Please ensure code follows best practices and is well-documented.
