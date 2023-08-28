@@ -1,5 +1,5 @@
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-import { Pokemon } from "../hooks/usePokemons";
+import { Pokemon } from "../hooks/usePokemon";
 
 interface Props {
   pokemon: Pokemon;

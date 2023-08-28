@@ -1,7 +1,7 @@
 import { CssBaseline, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
-import usePokemons from "./hooks/usePokemons";
+import usePokemonsList from "./hooks/usePokemonList";
 import PokemonGrid from "./components/PokemonGrid";
 
 // Create a custom theme
@@ -23,7 +23,7 @@ const theme = createTheme({
 });
 
 function App() {
-  const { data } = usePokemons();
+  const { data } = usePokemonsList();
 
   return (
     <ThemeProvider theme={theme}>
