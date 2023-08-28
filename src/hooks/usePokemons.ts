@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import APIClient from "../services/api-client";
 
 
-interface Pokemon {
+export interface Pokemon {
     id: number;
     name: string;
     height: number;
