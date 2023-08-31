@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
 import { Pokemon } from "../hooks/usePokemon";
 
 interface Props {
@@ -8,16 +8,25 @@ interface Props {
 const PokemonCard = ({ pokemon }: Props) => {
   return (
     <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
-        component="img"
-        sx={{
+      <Box
+        style={{
           width: "200px", // Set your desired width
           height: "200px", // Set your desired height
-          objectFit: "cover", // This property ensures the image maintains aspect ratio while fitting the container
+          overflow: "hidden", // Hide any content that overflows this wrapper
+          margin: "0 auto", // Center the wrapper horizontally
         }}
-        image={pokemon?.sprites?.other?.dream_world?.front_default || "  "}
-        alt={pokemon.name}
-      />
+      >
+        <CardMedia
+          component="img"
+          sx={{
+            width: "100%", // Set your desired width
+            height: "auto", // Set your desired height
+            display: "block",
+          }}
+          image={pokemon?.sprites?.other?.dream_world?.front_default || "  "}
+          alt={pokemon.name}
+        />
+      </Box>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {pokemon.name}
