@@ -16,6 +16,17 @@ export interface Pokemon {
       };
     };
   };
+  stats: Array<{
+    base_stat: number;
+    stat: {
+      name: string;
+    };
+  }>;
+  types: Array<{
+    type: {
+      name: string
+    }
+  }>
 }
 
 
