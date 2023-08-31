@@ -16,11 +16,8 @@ const PokemonGrid = () => {
   return (
     <Grid container spacing={5} padding={3}>
       {pokemons?.map((pokemon) => (
-        <Grid item xs={12} sm={6} md={4} lg={2}>
-          <PokemonCard
-            key={pokemon.data?.id}
-            pokemon={pokemon.data!}
-          ></PokemonCard>
+        <Grid key={pokemon.data?.id} item xs={12} sm={6} md={4} lg={2}>
+          <PokemonCard pokemon={pokemon.data!}></PokemonCard>
         </Grid>
       ))}
     </Grid>
