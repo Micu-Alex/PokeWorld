@@ -9,7 +9,7 @@ import APIClient from "../services/api-client";
   }
 
 
-const apiClient= new APIClient<PokemonsList>("/pokemon")
+const apiClient= new APIClient<PokemonsList>("/pokemon?limit=151")
 
 
   const usePokemonsList = () => 

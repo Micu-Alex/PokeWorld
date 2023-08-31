@@ -10,7 +10,11 @@ const PokemonCard = ({ pokemon }: Props) => {
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
         component="img"
-        height="140"
+        sx={{
+          width: "200px", // Set your desired width
+          height: "200px", // Set your desired height
+          objectFit: "cover", // This property ensures the image maintains aspect ratio while fitting the container
+        }}
         image={pokemon?.sprites?.other?.dream_world?.front_default || "  "}
         alt={pokemon.name}
       />
