@@ -22,7 +22,7 @@ class APIClient<T> {
             .then((res) => res.data.results);
     }
 
-    get = (url: string) => {
+    get = (url: string ) => {
         return axiosInstance
           .get<T>(url)
           .then((res) => res.data);

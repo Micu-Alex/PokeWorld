@@ -1,5 +1,6 @@
 import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
 import { Pokemon } from "../hooks/usePokemon";
+import { Link } from "react-router-dom";
 
 interface Props {
   pokemon: Pokemon;
@@ -15,17 +16,17 @@ const PokemonCard = ({ pokemon }: Props) => {
     <Card sx={{ maxWidth: 300 }}>
       <Box
         style={{
-          width: "200px", // Set your desired width
-          height: "200px", // Set your desired height
-          overflow: "hidden", // Hide any content that overflows this wrapper
-          margin: "0 auto", // Center the wrapper horizontally
+          width: "200px",
+          height: "200px",
+          overflow: "hidden",
+          margin: "0 auto",
         }}
       >
         <CardMedia
           component="img"
           sx={{
-            width: "100%", // Set your desired width
-            height: "auto", // Set your desired height
+            width: "100%",
+            height: "auto",
             display: "block",
           }}
           image={pokemon?.sprites?.other?.dream_world?.front_default || "  "}
@@ -33,9 +34,11 @@ const PokemonCard = ({ pokemon }: Props) => {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-        </Typography>
+        <Link to={"/pokemon/" + pokemon.name}>
+          <Typography gutterBottom variant="h5" component="div">
+            {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+          </Typography>
+        </Link>
 
         {filteredStats.map(({ stat, base_stat }) => (
           <Typography key={stat.name} variant="body2" color="text.secondary">
