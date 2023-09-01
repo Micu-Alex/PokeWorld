@@ -34,15 +34,6 @@ The project follows a modular structure to keep the code organized and maintaina
 - `src/`
   - `components/`: Contains React components used in the application.
   - `services/`: Houses the API client implementation (`APIClient`) and any other data-related logic.
-  - `hooks/`: Custom React hooks used for data fetching (e.g., `useGames`).
+  - `hooks/`: Custom React hooks used for data fetching (e.g., `usePokemon.ts`).
   - `App.tsx`: The main application component.
   - `index.tsx`: The entry point of the application.
-
-## Getting Started
-
-1. Clone this repository: `https://github.com/Micu-Alex/PokeWorld.git`
-2. Navigate to the project directory: `cd PokeWorld`
-3. Install dependencies: `npm install`
-4. Start the development server: `npm run dev`
-
-The app will be accessible at [http://localhost:5173](http://localhost:5173).
