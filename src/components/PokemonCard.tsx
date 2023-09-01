@@ -11,6 +11,10 @@ const PokemonCard = ({ pokemon }: Props) => {
   const filteredStats = pokemon.stats.filter((stat) =>
     statsToDisplay.includes(stat.stat.name)
   );
+  const linkStyle = {
+    textDecoration: "none",
+    color: "inherit",
+  };
 
   return (
     <Card sx={{ maxWidth: 300 }}>
@@ -34,7 +38,7 @@ const PokemonCard = ({ pokemon }: Props) => {
         />
       </Box>
       <CardContent>
-        <Link to={"/pokemon/" + pokemon.name}>
+        <Link to={"/pokemon/" + pokemon.name} style={linkStyle}>
           <Typography gutterBottom variant="h5" component="div">
             {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
           </Typography>
