@@ -1,8 +1,9 @@
 import { CssBaseline, Grid } from "@mui/material";
-import NavBar from "./components/NavBar";
-import PokemonGrid from "./components/PokemonGrid";
 
-function App() {
+import NavBar from "../components/NavBar";
+import PokemonGrid from "../components/PokemonGrid";
+
+const HomePage = () => {
   return (
     <>
       <CssBaseline />
@@ -17,6 +18,6 @@ function App() {
       </Grid>
     </>
   );
-}
+};
 
-export default App;
+export default HomePage;
