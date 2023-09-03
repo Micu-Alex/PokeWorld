@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography, Box } from "@mui/material";
 
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 import { Link } from "react-router-dom";
@@ -13,13 +13,15 @@ const NavBar = () => {
     <AppBar position="static">
       <Toolbar>
         <Link to={"/"} style={linkStyle}>
-          <IconButton edge="start" color="inherit">
-            <CatchingPokemonSharpIcon />
-          </IconButton>
+          <Box display={"flex"} alignItems={"center"}>
+            <IconButton edge="start" color="inherit">
+              <CatchingPokemonSharpIcon />
+            </IconButton>
+            <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
+              Pokémon World
+            </Typography>
+          </Box>
         </Link>
-        <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
-          Pokémon World
-        </Typography>
         {/* Add more navigation buttons or links as needed */}
       </Toolbar>
     </AppBar>
