@@ -33,7 +33,7 @@ const PokemonCard = ({ pokemon }: Props) => {
             height: "auto",
             display: "block",
           }}
-          image={pokemon?.sprites?.other?.dream_world?.front_default || "  "}
+          image={pokemon?.sprites?.other?.dream_world?.front_default}
           alt={pokemon.name}
         />
       </Box>
