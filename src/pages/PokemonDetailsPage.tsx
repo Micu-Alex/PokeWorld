@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import usePokemonDetails from "../hooks/usePokemonDetails";
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
-  const { data: pokemon } = usePokemonDetails(name!);
+  const { data: pokemon, isLoading } = usePokemonDetails(name!);
+
+  if (isLoading) return <CircularProgress />;
 
   return (
     <>
