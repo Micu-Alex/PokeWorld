@@ -8,6 +8,11 @@ const PokemonDetailsPage = () => {
 
   if (isLoading) return <CircularProgress />;
 
+  `need to add: 
+    -abilities
+    -height
+    -weight
+    -forms`;
   return (
     <>
       <Box
