@@ -1,34 +1,7 @@
 import { useQueries } from "react-query";
 import APIClient from "../services/api-client";
 import { PokemonsList } from "./usePokemonList";
-
-
-
-export interface Pokemon {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  sprites: {
-    other: {
-      dream_world: {
-        front_default: string;
-      };
-    };
-  };
-  stats: Array<{
-    base_stat: number;
-    stat: {
-      name: string;
-    };
-  }>;
-  types: Array<{
-    type: {
-      name: string
-    }
-  }>
-}
-
+import Pokemon from "../entities/Pokemon";
 
 const apiClient = new APIClient<Pokemon>("pokemon")
 
