@@ -8,6 +8,8 @@ const PokemonDetailsPage = () => {
 
   if (isLoading) return <CircularProgress />;
 
+  console.log(pokemon?.abilities);
+
   `need to add: 
     -abilities
     -height
@@ -27,7 +29,9 @@ const PokemonDetailsPage = () => {
         src={pokemon?.sprites.other.dream_world.front_default}
       />
       <Typography>{pokemon?.name}</Typography>
-      <Typography>HELLO FROM DETAILS</Typography>
+      {pokemon?.abilities.map(({ ability }) => (
+        <Typography key={ability.name}>{ability.name}</Typography>
+      ))}
     </>
   );
 };

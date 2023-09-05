@@ -20,5 +20,10 @@ export default interface Pokemon {
       type: {
         name: string
       }
+    }>;
+    abilities: Array<{
+      ability: {
+        name: string
+      }
     }>
   }

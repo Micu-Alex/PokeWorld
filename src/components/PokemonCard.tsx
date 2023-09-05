@@ -1,6 +1,7 @@
 import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
-import { Pokemon } from "../hooks/usePokemon";
+
 import { Link } from "react-router-dom";
+import Pokemon from "../entities/Pokemon";
 
 interface Props {
   pokemon: Pokemon;
