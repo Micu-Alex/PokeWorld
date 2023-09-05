@@ -1,7 +1,8 @@
 // usePokemonDetails.js
-import { useQuery } from "react-query";
+
 import APIClient from "../services/api-client";
 import Pokemon from "../entities/Pokemon";
+import { useQuery } from "@tanstack/react-query";
 
 
 
