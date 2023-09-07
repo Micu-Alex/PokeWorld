@@ -25,7 +25,16 @@ const PokemonCard = ({ pokemon }: Props) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 300 }}>
+    <Card
+      sx={{
+        maxWidth: 300,
+        transition: "transform 0.2s ease",
+        "&:hover": {
+          transform: "scale(1.05)",
+        },
+        height: 380,
+      }}
+    >
       <CardActionArea>
         <Link to={"/pokemon/" + pokemon.name} style={linkStyle}>
           <Box
