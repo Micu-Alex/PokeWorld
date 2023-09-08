@@ -13,7 +13,6 @@ interface AbilityList {
         name: string
         url:string
     }
-
 }
 
 const apiClient= new APIClient<AbilityData>("ability")
