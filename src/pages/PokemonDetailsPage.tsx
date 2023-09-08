@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
 import usePokemonDetails from "../hooks/usePokemonDetails";
 import { Box, CircularProgress, Typography } from "@mui/material";
+import useAbility from "../hooks/useAbility";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
   const { data: pokemon, isLoading } = usePokemonDetails(name!);
+  if (pokemon) {
+    const ability = useAbility(pokemon.abilities);
+    console.log(ability);
+  }
 
   if (isLoading) return <CircularProgress />;
-
-  console.log(pokemon?.abilities);
 
   `need to add: 
     -abilities
@@ -29,6 +32,7 @@ const PokemonDetailsPage = () => {
         src={pokemon?.sprites.other.dream_world.front_default}
       />
       <Typography>{pokemon?.name}</Typography>
+
       {pokemon?.abilities.map(({ ability }) => (
         <Typography key={ability.name}>{ability.name}</Typography>
       ))}

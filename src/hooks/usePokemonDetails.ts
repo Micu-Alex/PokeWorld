@@ -1,9 +1,6 @@
-// usePokemonDetails.js
-
 import APIClient from "../services/api-client";
 import Pokemon from "../entities/Pokemon";
 import { useQuery } from "@tanstack/react-query";
-
 
 
 const usePokemonDetails = (name: string) => {
