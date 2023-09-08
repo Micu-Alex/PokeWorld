@@ -1,6 +1,13 @@
 import { useParams } from "react-router-dom";
 import usePokemonDetails from "../hooks/usePokemonDetails";
-import { Box, CircularProgress, Grid, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Grid,
+  List,
+  Paper,
+  Typography,
+} from "@mui/material";
 import useAbility from "../hooks/useAbility";
 import { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../services/stringUtils";
@@ -28,6 +35,35 @@ const PokemonDetailsPage = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} md={6}>
+        <Typography variant="h4" gutterBottom>
+          {capitalizeFirstLetter(pokemon?.name!)}
+        </Typography>
+
+        <Typography variant="h6" gutterBottom>
+          Stats:
+        </Typography>
+        {filteredStats.map(({ stat, base_stat }) => (
+          <Typography key={stat.name} variant="body2" color="text.secondary">
+            {capitalizeFirstLetter(stat.name)}: {base_stat}
+          </Typography>
+        ))}
+
+        <Typography variant="h6" marginTop={3}>
+          Abilities:
+        </Typography>
+        <List>
+          {pokemon?.abilities.map(({ ability }) => (
+            <Typography
+              key={ability.name}
+              variant="body2"
+              color="text.secondary"
+            >
+              {capitalizeFirstLetter(ability.name)}
+            </Typography>
+          ))}
+        </List>
+      </Grid>
+      <Grid item xs={12} md={6}>
         <Paper elevation={3}>
           <Box
             component="img"
@@ -43,27 +79,6 @@ const PokemonDetailsPage = () => {
             src={pokemon?.sprites.other.dream_world.front_default}
           />
         </Paper>
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <Typography variant="h4" gutterBottom>
-          {capitalizeFirstLetter(pokemon?.name!)}
-        </Typography>
-
-        {filteredStats.map(({ stat, base_stat }) => (
-          <Typography key={stat.name} variant="body2" color="text.secondary">
-            {capitalizeFirstLetter(stat.name)}: {base_stat}
-          </Typography>
-        ))}
-        <Typography variant="h6" gutterBottom>
-          Abilities:
-        </Typography>
-        <ul>
-          {pokemon?.abilities.map(({ ability }) => (
-            <Typography key={ability.name} variant="body1">
-              {capitalizeFirstLetter(ability.name)}
-            </Typography>
-          ))}
-        </ul>
       </Grid>
     </Grid>
   );
