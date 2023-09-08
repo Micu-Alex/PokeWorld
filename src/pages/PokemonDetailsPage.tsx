@@ -12,6 +12,7 @@ const PokemonDetailsPage = () => {
   }
 
   if (isLoading) return <CircularProgress />;
+  // console.log(pokemon?.abilities);
 
   `need to add: 
     -abilities
