@@ -3,6 +3,7 @@ import usePokemonDetails from "../hooks/usePokemonDetails";
 import { Box, CircularProgress, Grid, Paper, Typography } from "@mui/material";
 import useAbility from "../hooks/useAbility";
 import { useEffect, useState } from "react";
+import { capitalizeFirstLetter } from "../services/stringUtils";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
@@ -45,13 +46,12 @@ const PokemonDetailsPage = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <Typography variant="h4" gutterBottom>
-          {pokemon?.name}
+          {capitalizeFirstLetter(pokemon?.name!)}
         </Typography>
 
         {filteredStats.map(({ stat, base_stat }) => (
           <Typography key={stat.name} variant="body2" color="text.secondary">
-            {[stat.name.charAt(0).toUpperCase() + stat.name.slice(1)]}:{" "}
-            {base_stat}
+            {capitalizeFirstLetter(stat.name)}: {base_stat}
           </Typography>
         ))}
         <Typography variant="h6" gutterBottom>
@@ -60,7 +60,7 @@ const PokemonDetailsPage = () => {
         <ul>
           {pokemon?.abilities.map(({ ability }) => (
             <Typography key={ability.name} variant="body1">
-              {ability.name}
+              {capitalizeFirstLetter(ability.name)}
             </Typography>
           ))}
         </ul>
