@@ -6,10 +6,9 @@ import useAbility from "../hooks/useAbility";
 const PokemonDetailsPage = () => {
   const { name } = useParams();
   const { data: pokemon, isLoading } = usePokemonDetails(name!);
-  if (pokemon) {
-    const ability = useAbility(pokemon.abilities);
-    console.log(ability);
-  }
+  const ability = useAbility(pokemon?.abilities!);
+
+  console.log(ability);
 
   if (isLoading) return <CircularProgress />;
   // console.log(pokemon?.abilities);
