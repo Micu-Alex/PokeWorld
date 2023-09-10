@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import useAbility from "../hooks/useAbility";
 import { useEffect, useState } from "react";
-import { capitalizeFirstLetter } from "../services/stringUtils";
+import { capitalizeFirstLetter } from "../Utilities/stringUtils";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
