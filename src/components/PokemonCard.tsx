@@ -23,8 +23,6 @@ const PokemonCard = ({ pokemon }: Props) => {
   };
 
   const type = pokemon.types[0].type.name;
-  console.log(type);
-
   const backgroundColor = getTypeColor(type);
 
   return (
