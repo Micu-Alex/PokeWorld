@@ -8,7 +8,6 @@ const HomePage = () => {
         <Grid item xs={12}>
           <PokemonGrid />
         </Grid>
-        {/* Add more Grid items for different sections */}
       </Grid>
     </>
   );

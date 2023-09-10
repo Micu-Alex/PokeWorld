@@ -22,7 +22,6 @@ const NavBar = () => {
             </Typography>
           </Box>
         </Link>
-        {/* Add more navigation buttons or links as needed */}
       </Toolbar>
     </AppBar>
   );

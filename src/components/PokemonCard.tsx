@@ -68,8 +68,8 @@ const PokemonCard = ({ pokemon }: Props) => {
             <Paper
               style={{
                 opacity: 0.8,
-                borderRadius: "16px", // Rounded corners
-                padding: "8px", // Padding for content
+                borderRadius: "16px",
+                padding: "8px",
               }}
             >
               {pokemon.types.map(({ type }) => (

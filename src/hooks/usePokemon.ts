@@ -15,7 +15,7 @@ const usePokemon = (PokemonsList: PokemonsList[]) => {
     };
   });
 
-  return useQueries({ queries }); // Wrap the array in an object with 'queries' property
+  return useQueries({ queries }); 
 };
 
 export default usePokemon
