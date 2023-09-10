@@ -5,6 +5,7 @@ import {
   Typography,
   Box,
   CardActionArea,
+  Paper,
 } from "@mui/material";
 
 import { Link } from "react-router-dom";
@@ -64,15 +65,23 @@ const PokemonCard = ({ pokemon }: Props) => {
             <Typography gutterBottom variant="h5" component="div">
               {capitalizeFirstLetter(pokemon.name)}
             </Typography>
-            {pokemon.types.map(({ type }) => (
-              <Typography
-                key={type.name}
-                variant="body2"
-                color="text.secondary"
-              >
-                {capitalizeFirstLetter(type.name)}
-              </Typography>
-            ))}
+            <Paper
+              style={{
+                opacity: 0.8,
+                borderRadius: "16px", // Rounded corners
+                padding: "8px", // Padding for content
+              }}
+            >
+              {pokemon.types.map(({ type }) => (
+                <Typography
+                  key={type.name}
+                  variant="body2"
+                  color="text.secondary.dark"
+                >
+                  {capitalizeFirstLetter(type.name)}
+                </Typography>
+              ))}
+            </Paper>
           </CardContent>
         </Link>
       </CardActionArea>
