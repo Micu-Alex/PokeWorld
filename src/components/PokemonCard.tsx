@@ -29,7 +29,7 @@ const PokemonCard = ({ pokemon }: Props) => {
         "&:hover": {
           transform: "scale(1.05)",
         },
-        height: 380,
+        height: 320,
       }}
     >
       <CardActionArea>
@@ -46,14 +46,14 @@ const PokemonCard = ({ pokemon }: Props) => {
               component="img"
               sx={{
                 width: "100%",
-                height: "auto",
-                display: "block",
+                height: "100%",
+                objectFit: "contain",
               }}
               image={pokemon?.sprites?.other?.dream_world?.front_default}
               alt={pokemon.name}
             />
           </Box>
-          <CardContent>
+          <CardContent sx={{ height: 120 }}>
             <Typography gutterBottom variant="h5" component="div">
               {capitalizeFirstLetter(pokemon.name)}
             </Typography>
