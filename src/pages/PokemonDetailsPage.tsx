@@ -9,25 +9,13 @@ import {
   Typography,
 } from "@mui/material";
 import useAbility from "../hooks/useAbility";
-import { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
+import StatsDisplay from "../components/StatsDisplay";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
   const { data: pokemon, isLoading } = usePokemonDetails(name!);
   const ability = useAbility(pokemon?.abilities!);
-
-  const [filteredStats, setFilteredStats] = useState<any[]>([]);
-
-  useEffect(() => {
-    if (pokemon) {
-      const statsToDisplay = ["hp", "attack", "defense"];
-      const filteredStats = pokemon!.stats.filter((stat) =>
-        statsToDisplay.includes(stat.stat.name)
-      );
-      setFilteredStats(filteredStats);
-    }
-  }, [pokemon]);
 
   if (isLoading) return <CircularProgress />;
   // console.log(pokemon?.abilities);
@@ -39,14 +27,7 @@ const PokemonDetailsPage = () => {
           {capitalizeFirstLetter(pokemon?.name!)}
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
-          Stats:
-        </Typography>
-        {filteredStats.map(({ stat, base_stat }) => (
-          <Typography key={stat.name} variant="body2" color="text.secondary">
-            {capitalizeFirstLetter(stat.name)}: {base_stat}
-          </Typography>
-        ))}
+        <StatsDisplay pokemon={pokemon!} />
 
         <Typography variant="h6" marginTop={3}>
           Abilities:
