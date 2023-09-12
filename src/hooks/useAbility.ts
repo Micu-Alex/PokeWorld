@@ -1,9 +1,12 @@
 import { useQueries } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 
-interface AbilityData {
+export interface AbilityData {
     name: string;
    effect_entries: Array<{
+    language: {
+        name: string; 
+    };
     short_effect: string
    }>
 }
@@ -25,6 +28,12 @@ const useAbility = (AbilityList: AbilityList[]) => {
             queryFn: () => apiClient.get(ability.ability.url)
         }
     })
-    return useQueries({queries})
+  
+  const results = useQueries({queries});
+  
+  const isLoading = results.map((result) => result.isLoading);
+  const abilitiesData = results.map((result) => result.data);
+
+    return { abilitiesData, isLoading };
 }
 export default useAbility

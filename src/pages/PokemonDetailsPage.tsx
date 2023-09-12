@@ -1,25 +1,23 @@
 import { useParams } from "react-router-dom";
 import usePokemonDetails from "../hooks/usePokemonDetails";
-import {
-  Box,
-  CircularProgress,
-  Grid,
-  List,
-  Paper,
-  Typography,
-} from "@mui/material";
-import useAbility from "../hooks/useAbility";
+import { Box, CircularProgress, Grid, Paper, Typography } from "@mui/material";
+import useAbility, { AbilityData } from "../hooks/useAbility";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
 import StatsDisplay from "../components/StatsDisplay";
+import AbilitiesDisplay from "../components/AbilitiesDisplay";
 
 const PokemonDetailsPage = () => {
   const { name } = useParams();
-  const { data: pokemon, isLoading } = usePokemonDetails(name!);
-  const ability = useAbility(pokemon?.abilities!);
+  const { data: pokemon, isLoading: isPokemonLoading } = usePokemonDetails(
+    name!
+  );
+  const { abilitiesData, isLoading: isAbilitysLoading } = useAbility(
+    pokemon?.abilities!
+  );
 
-  if (isLoading) return <CircularProgress />;
-  // console.log(pokemon?.abilities);
+  if (isPokemonLoading) return <CircularProgress />;
 
+  const isAbilityLoading = isAbilitysLoading.some((isLoading) => isLoading);
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} md={6}>
@@ -29,20 +27,11 @@ const PokemonDetailsPage = () => {
 
         <StatsDisplay pokemon={pokemon!} />
 
-        <Typography variant="h6" marginTop={3}>
-          Abilities:
-        </Typography>
-        <List>
-          {pokemon?.abilities.map(({ ability }) => (
-            <Typography
-              key={ability.name}
-              variant="body2"
-              color="text.secondary"
-            >
-              {capitalizeFirstLetter(ability.name)}
-            </Typography>
-          ))}
-        </List>
+        {isAbilityLoading ? (
+          <CircularProgress />
+        ) : (
+          <AbilitiesDisplay abilityData={abilitiesData as AbilityData[]} />
+        )}
       </Grid>
       <Grid item xs={12} md={6}>
         <Paper elevation={3}>
