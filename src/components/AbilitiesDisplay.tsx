@@ -5,6 +5,7 @@ import {
   ListItem,
   ListItemText,
   IconButton,
+  styled,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
@@ -35,7 +36,17 @@ const AbilitiesDisplay = ({ abilityData }: Props) => {
       <List>
         {abilityData.map((ability) => (
           <Fragment key={ability.name}>
-            <ListItem button onClick={() => handleAbilityClick(ability.name)}>
+            <ListItem
+              onClick={() => handleAbilityClick(ability.name)}
+              sx={{
+                borderRadius: 7,
+                transition: "transform 0.2s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.01)",
+                  background: "rgba(0, 0, 0, 0.1)",
+                },
+              }}
+            >
               <ListItemText primary={capitalizeFirstLetter(ability.name)} />
               <IconButton edge="end" aria-label="expand">
                 <ExpandMoreIcon

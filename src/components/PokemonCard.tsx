@@ -33,7 +33,7 @@ const PokemonCard = ({ pokemon }: Props) => {
         maxWidth: 300,
         backgroundColor: backgroundColor,
         boxShadow: `0px 4px 6px ${backgroundColor}`,
-        transition: "transform 0.2s ease",
+        transition: "transform 0.2s ease-in-out",
         "&:hover": {
           transform: "scale(1.05)",
         },
