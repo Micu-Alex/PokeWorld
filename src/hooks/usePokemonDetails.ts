@@ -12,4 +12,5 @@ const usePokemonDetails = (name: string) => {
   })
 };
 
+
 export default usePokemonDetails;
