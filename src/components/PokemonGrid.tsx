@@ -16,17 +16,22 @@ const PokemonGrid = () => {
 
   if (isLoading) return <CircularProgress />;
 
-  const filtredPokemons = pokemons.filter((poke) => {
-    if (!selectedType) {
-      return true;
-    }
-    return poke.data?.types.some((type) => type.type.name === selectedType);
-  });
+  const filtredPokemons =
+    selectedType === "All"
+      ? pokemons
+      : pokemons.filter((poke) => {
+          if (!selectedType) {
+            return true;
+          }
+          return poke.data?.types.some(
+            (type) => type.type.name === selectedType
+          );
+        });
 
   return (
     <Grid container justifyContent="end">
       <Grid item xs={12} sm={6} md={4} lg={2} marginRight={3}>
-        <TypeSelector setType={setSelectedType} />
+        <TypeSelector setType={setSelectedType} type={selectedType} />
       </Grid>
       <Grid container spacing={5} padding={3}>
         {filtredPokemons?.map((pokemon) => (

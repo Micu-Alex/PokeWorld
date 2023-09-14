@@ -4,16 +4,18 @@ import { capitalizeFirstLetter } from "../Utilities/stringUtils";
 
 interface Props {
   setType: (type: string) => void;
+  type: string;
 }
 
-const TypeSelector = ({ setType }: Props) => {
+const TypeSelector = ({ setType, type }: Props) => {
   return (
     <FormControl fullWidth>
       <InputLabel>Type</InputLabel>
       <Select
-        value={""}
         label="Type"
+        value={type}
         onChange={(e) => setType(e.target.value as string)}
+        sx={{ borderRadius: 5 }}
       >
         {pokemonTypes.map((type) => (
           <MenuItem key={type} value={type}>
