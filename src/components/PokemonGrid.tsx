@@ -24,8 +24,10 @@ const PokemonGrid = () => {
   });
 
   return (
-    <>
-      <TypeSelector setType={setSelectedType} />
+    <Grid container justifyContent="end">
+      <Grid item xs={12} sm={6} md={4} lg={2} marginRight={3}>
+        <TypeSelector setType={setSelectedType} />
+      </Grid>
       <Grid container spacing={5} padding={3}>
         {filtredPokemons?.map((pokemon) => (
           <Grid key={pokemon.data?.id} item xs={12} sm={6} md={4} lg={2}>
@@ -33,7 +35,7 @@ const PokemonGrid = () => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Grid>
   );
 };
 
