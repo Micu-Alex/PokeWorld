@@ -7,7 +7,7 @@ export const pokemonTypes = [
     "poison",
     "ground",
     "grass",
-    " fire",
+    "fire",
     "electric",
     "fairy",
     "bug",

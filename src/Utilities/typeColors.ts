@@ -3,7 +3,7 @@ const typeColors: { [key: string]: string } = {
     flying: " #BAB0D5",
     ghost: " #735797",
     dark: " #333",
-    steel: " #CCCCDE,",
+    steel: " #CCCCDE",
     poison: " #7C538C",
     ground: " #B1736C",
     grass: " #48D0B0",
