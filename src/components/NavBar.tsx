@@ -2,6 +2,7 @@ import { AppBar, Toolbar, IconButton, Typography, Box } from "@mui/material";
 
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 import { Link } from "react-router-dom";
+import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   const linkStyle = {
@@ -22,6 +23,9 @@ const NavBar = () => {
             </Typography>
           </Box>
         </Link>
+        <Box sx={{ marginLeft: "auto", width: 500 }}>
+          <SearchInput />
+        </Box>
       </Toolbar>
     </AppBar>
   );
