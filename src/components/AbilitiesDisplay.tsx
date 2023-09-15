@@ -5,7 +5,6 @@ import {
   ListItem,
   ListItemText,
   IconButton,
-  styled,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
@@ -18,13 +17,13 @@ interface Props {
 }
 
 const AbilitiesDisplay = ({ abilityData }: Props) => {
-  const [openAbility, setOpenAbility] = useState<string | null>(null);
+  const [openedAbility, setOpenedAbility] = useState<string | null>(null);
 
   const handleAbilityClick = (abilityName: string) => {
-    if (openAbility === abilityName) {
-      setOpenAbility(null);
+    if (openedAbility === abilityName) {
+      setOpenedAbility(null);
     } else {
-      setOpenAbility(abilityName);
+      setOpenedAbility(abilityName);
     }
   };
 
@@ -52,12 +51,14 @@ const AbilitiesDisplay = ({ abilityData }: Props) => {
                 <ExpandMoreIcon
                   style={{
                     transform:
-                      openAbility === ability.name ? "rotate(180deg)" : "none",
+                      openedAbility === ability.name
+                        ? "rotate(180deg)"
+                        : "none",
                   }}
                 />
               </IconButton>
             </ListItem>
-            <Collapse in={openAbility === ability.name}>
+            <Collapse in={openedAbility === ability.name}>
               <ListItem>
                 <ListItemText primary={getEnglishEffect(ability)} />
               </ListItem>
