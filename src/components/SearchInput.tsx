@@ -17,13 +17,13 @@ const SearchInput = () => {
       sx={{
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
           borderWidth: "2px",
-          borderColor: "inherit",
+          borderColor: "black",
           borderRadius: 5,
         },
         "& .MuiInputLabel-root": {
           fontWeight: "bold",
           borderWidth: "2px",
-          borderColor: "inherit",
+          borderColor: "black",
           borderRadius: 5,
         },
       }}
