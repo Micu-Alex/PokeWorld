@@ -10,21 +10,21 @@ const SearchInput = () => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon />
+            <SearchIcon sx={{ color: "#211001" }} />
           </InputAdornment>
         ),
       }}
       sx={{
         "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
           borderWidth: "2px",
-          borderColor: "black",
           borderRadius: 5,
+          borderColor: "#211001",
         },
         "& .MuiInputLabel-root": {
           fontWeight: "bold",
           borderWidth: "2px",
-          borderColor: "black",
           borderRadius: 5,
+          borderColor: "#211001",
         },
       }}
     />
