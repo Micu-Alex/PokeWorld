@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, IconButton, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 import { Link } from "react-router-dom";
