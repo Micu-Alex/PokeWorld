@@ -15,6 +15,7 @@ const SearchInput = () => {
         fontWeight: "bold",
         border: "2px solid #211001",
         borderRadius: 7,
+        height: 50,
       }}
     />
   );
