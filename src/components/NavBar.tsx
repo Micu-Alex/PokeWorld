@@ -15,9 +15,9 @@ const NavBar = () => {
       <Toolbar>
         <Link to={"/"} style={linkStyle}>
           <Box display={"flex"} alignItems={"center"}>
-            <IconButton edge="start" color="inherit">
+            <Box display={"flex"} marginRight={0.5}>
               <CatchingPokemonSharpIcon />
-            </IconButton>
+            </Box>
             <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
               Pokémon World
             </Typography>
