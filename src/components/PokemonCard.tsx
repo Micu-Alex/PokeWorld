@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import Pokemon from "../entities/Pokemon";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
 import { getTypeColor } from "../Utilities/typeColors";
+import { useState } from "react";
 
 interface Props {
   pokemon: Pokemon;
@@ -26,8 +27,25 @@ const PokemonCard = ({ pokemon }: Props) => {
   const type = pokemon.types[0].type.name;
   const backgroundColor = getTypeColor(type);
 
+  // State to track mouse position
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+
+  // Function to update rotation based on mouse position
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const halfWidth = 131;
+    const halfHeight = 160;
+    const x = e.nativeEvent.offsetX;
+    const y = e.nativeEvent.offsetY;
+
+    const rotationY = ((x - halfWidth) / halfWidth) * 20;
+    const rotationX = ((y - halfHeight) / halfHeight) * 20;
+
+    setRotation({ x: rotationX, y: rotationY });
+  };
+
   return (
     <Card
+      onMouseMove={(e) => handleMouseMove(e)}
       sx={{
         borderRadius: 7,
         maxWidth: 300,
@@ -35,7 +53,7 @@ const PokemonCard = ({ pokemon }: Props) => {
         boxShadow: `0px 4px 6px ${backgroundColor}`,
         transition: "transform 0.2s ease-in-out",
         "&:hover": {
-          transform: "scale(1.05)",
+          transform: `scale(1.05) rotateY(${rotation.y}deg) rotateX(${rotation.x}deg)`, // Apply the 3D rotation on hover
         },
         height: 320,
       }}
