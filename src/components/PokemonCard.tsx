@@ -60,7 +60,7 @@ const PokemonCard = ({ pokemon }: Props) => {
       onMouseMove={handleOnMouseMove}
       onMouseLeave={handleOnMouseLeave}
       style={{
-        transform: props.xys.interpolate(trans),
+        transform: props.xys.to(trans),
       }}
     >
       <Card
