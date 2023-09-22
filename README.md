@@ -25,7 +25,15 @@ Welcome to the Pokémon React App! This project showcases the usage of various t
   - The PokéAPI is a RESTful API that provides comprehensive information about Pokémon species, their abilities, types, and more. This project uses the API to fetch Pokémon data.
 
 - [Material-UI](https://mui.com/)
+
   - Material-UI is a popular React UI framework that provides pre-designed components following the Material Design guidelines. It enables you to create visually appealing and responsive user interfaces.
+
+- [React Spring](https://react-spring.io/)
+
+  - React Spring is a spring-physics based animation library for React. It allows you to create smooth animations and transitions in your application.
+
+- [React Router](https://reactrouter.com/)
+  - React Router is a popular routing library for React applications. It enables you to manage navigation and create multi-page applications.
 
 ## Project Structure
 
@@ -35,5 +43,5 @@ The project follows a modular structure to keep the code organized and maintaina
   - `components/`: Contains React components used in the application.
   - `services/`: Houses the API client implementation (`APIClient`) and any other data-related logic.
   - `hooks/`: Custom React hooks used for data fetching (e.g., `usePokemon.ts`).
-  - `App.tsx`: The main application component.
+  - `pages/`: Contains page components that represent different pages of the application.
   - `index.tsx`: The entry point of the application.
