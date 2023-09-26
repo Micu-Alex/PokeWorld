@@ -20,8 +20,8 @@ interface Props {
 const PokemonCard = ({ pokemon }: Props) => {
   // Animation for the card
   const calc = (x: number, y: number) => [
-    -(y - 160 / 2) / 20,
-    (x - 131 / 2) / 20,
+    -(y - 160 / 2) / 50,
+    (x - 131 / 2) / 50,
     1.1,
   ];
 
@@ -37,12 +37,11 @@ const PokemonCard = ({ pokemon }: Props) => {
     const cardRect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - cardRect.left; // X position within the card
     const y = e.clientY - cardRect.top; // Y position within the card
-    set({ xys: calc(x, y) });
-    set({ xys: calc(x, y) });
+    set.start({ xys: calc(x, y) });
   };
 
   const handleOnMouseLeave = () => {
-    set({ xys: [0, 0, 1] });
+    set.start({ xys: [0, 0, 1] });
   };
 
   //custom style for links

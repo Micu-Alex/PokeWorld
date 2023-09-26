@@ -8,7 +8,7 @@ import APIClient from "../services/api-client";
     url: string
   }
 
-const apiClient= new APIClient<PokemonsList>("/pokemon?limit=151")
+const apiClient= new APIClient<PokemonsList>("/pokemon")
 
   const usePokemonsList = () => 
   useQuery({
