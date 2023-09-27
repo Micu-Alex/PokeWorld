@@ -1,19 +1,29 @@
 
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 
 
- export interface  PokemonsList {
-    name: string
-    url: string
-  }
+export interface Pokemons {
+  name: string;
+  url: string;
+}
+
+export interface PokemonsList {
+
+  results: Pokemons[];
+  next: string | null;
+}
 
 const apiClient= new APIClient<PokemonsList>("/pokemon")
 
   const usePokemonsList = () => 
-  useQuery({
+  useInfiniteQuery({
     queryKey: ["pokemons"],
-    queryFn: apiClient.getAll
-  })
+    queryFn: ({pageParam}) => {return apiClient.getAll(pageParam); 
+    },
+    getNextPageParam: (lastPage) => {return lastPage.next
+    } 
+    },
+  )
 
   export default usePokemonsList

@@ -16,10 +16,17 @@ class APIClient<T> {
         this.endpoint = endpoint
     }
 
-    getAll = () => {
+
+      getAll = (url: string) => {
+        if (url) {
+        return axiosInstance
+            .get<FetchResponse<T>>(url)
+            .then((res) => res.data);
+        }
         return axiosInstance
             .get<FetchResponse<T>>(this.endpoint)
-            .then((res) => res.data.results);
+            .then((res) => res.data);
+
     }
 
     get = (url: string ) => {

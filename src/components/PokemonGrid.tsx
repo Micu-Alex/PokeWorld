@@ -1,14 +1,31 @@
-import { CircularProgress, Grid } from "@mui/material";
+import { Button, CircularProgress, Grid } from "@mui/material";
 import usePokemonsList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
 import usePokemon from "../hooks/usePokemon";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import TypeSelector from "./TypeSelector";
 import SearchContext from "../contexts/SearchContext";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const PokemonGrid = () => {
-  const { data: pokemonList, error } = usePokemonsList();
-  const pokemons = usePokemon(pokemonList!);
+  const {
+    data: pokemonList,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = usePokemonsList();
+
+  const pokemons = usePokemon(
+    pokemonList ? pokemonList!.pages[pokemonList.pages.length - 1].results : []
+  );
+
+  const [test, setTest] = useState(() => pokemons);
+
+  useEffect(() => {
+    setTest(pokemons);
+  }, []);
+
   const [selectedType, setSelectedType] = useState<string>("");
 
   const { searchText } = useContext(SearchContext);
@@ -39,6 +56,9 @@ const PokemonGrid = () => {
       )
     : filteredPokemons;
 
+  const fetchedPokemonsCount =
+    pokemonList?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
+
   return (
     <Grid container justifyContent="end">
       <Grid item xs={12} sm={6} md={4} lg={2} marginRight={3}>
@@ -51,6 +71,13 @@ const PokemonGrid = () => {
           </Grid>
         ))}
       </Grid>
+      <Button onClick={() => fetchNextPage()}>
+        {isFetchingNextPage
+          ? "Loading more.ssssssssssssssssssssssssss.."
+          : hasNextPage
+          ? "Load More"
+          : "Nothing more to load"}
+      </Button>
     </Grid>
   );
 };
