@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Grid } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 import usePokemonsList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
 import usePokemon from "../hooks/usePokemon";
