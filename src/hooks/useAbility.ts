@@ -1,15 +1,6 @@
 import { useQueries } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
-
-export interface AbilityData {
-    name: string;
-   effect_entries: Array<{
-    language: {
-        name: string; 
-    };
-    short_effect: string
-   }>
-}
+import  AbilityData  from "../entities/AbilityData";
 
 interface AbilityList {
     ability: {

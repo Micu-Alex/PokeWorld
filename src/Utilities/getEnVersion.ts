@@ -1,4 +1,4 @@
-import { AbilityData } from "../hooks/useAbility";
+import  AbilityData from "../entities/AbilityData";
 
 export const getEnglishEffect = (ability: AbilityData) => {
     const englishEffect = ability.effect_entries.find(

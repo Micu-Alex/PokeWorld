@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
-import { AbilityData } from "../hooks/useAbility";
+import AbilityData from "../entities/AbilityData";
 import { Fragment, useState } from "react";
 import { getEnglishEffect } from "../Utilities/getEnVersion";
 

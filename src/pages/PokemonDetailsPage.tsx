@@ -4,7 +4,8 @@ import { capitalizeFirstLetter } from "../Utilities/stringUtils";
 import AbilitiesDisplay from "../components/AbilitiesDisplay";
 import PokemonDisplay from "../components/PokemonDisplay";
 import StatsDisplay from "../components/StatsDisplay";
-import useAbility, { AbilityData } from "../hooks/useAbility";
+import useAbility from "../hooks/useAbility";
+import AbilityData from "../entities/AbilityData";
 import usePokemonDetails from "../hooks/usePokemonDetails";
 
 const PokemonDetailsPage = () => {
