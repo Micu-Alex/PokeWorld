@@ -8,7 +8,7 @@ import { ListedPokemons } from "./usePokemonList";
 const apiClient = new APIClient<Pokemon>("pokemon")
 
 
-const usePokemon = (PokemonsList:  ListedPokemons[]) => {
+const usePokemon = (PokemonsList: ListedPokemons[]) => {
   
   const queries = PokemonsList.map((pokemons) => {
     return ({

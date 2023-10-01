@@ -8,12 +8,7 @@ export interface ListedPokemons {
   url: string;
 }
 
-interface PokemonsList {
-  results: ListedPokemons[];
-  next: string | null;
-}
-
-const apiClient= new APIClient<PokemonsList>("/pokemon")
+const apiClient= new APIClient<ListedPokemons>("/pokemon")
 
   const usePokemonsList = () => 
   useInfiniteQuery({

@@ -2,7 +2,7 @@ import { CircularProgress, Grid } from "@mui/material";
 import usePokemonsList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
 import usePokemon from "../hooks/usePokemon";
-import { useState, useContext } from "react";
+import { useState, useContext, useMemo } from "react";
 import TypeSelector from "./TypeSelector";
 import SearchContext from "../contexts/SearchContext";
 import InfiniteScroll from "react-infinite-scroll-component";
