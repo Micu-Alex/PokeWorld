@@ -1,18 +1,16 @@
 
 import APIClient  from "../services/api-client";
-
 import Pokemon from "../entities/Pokemon";
 import { useQueries } from "@tanstack/react-query";
+import { ListedPokemons } from "./usePokemonList";
 
 
 const apiClient = new APIClient<Pokemon>("pokemon")
 
 
-const usePokemon = (PokemonsList:  any[]) => {
-  PokemonsList = PokemonsList || [];
-
+const usePokemon = (PokemonsList:  ListedPokemons[]) => {
   
-  const queries = PokemonsList.flatMap((pokemons) => {
+  const queries = PokemonsList.map((pokemons) => {
     return ({
       queryKey: ["pokemons", pokemons.name],
       queryFn: () => apiClient.get(pokemons.url),

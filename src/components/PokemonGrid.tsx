@@ -15,9 +15,13 @@ const PokemonGrid = () => {
     hasNextPage,
   } = usePokemonsList();
 
-  const allFetchedPokemons = pokemonList
-    ? pokemonList.pages.flatMap((page) => page.results)
-    : [];
+  const allFetchedPokemons = useMemo(() => {
+    if (!pokemonList) {
+      return [];
+    }
+    return pokemonList.pages.flatMap((page) => page.results);
+  }, [pokemonList]);
+  console.log(allFetchedPokemons);
 
   const pokemons = usePokemon(allFetchedPokemons);
 

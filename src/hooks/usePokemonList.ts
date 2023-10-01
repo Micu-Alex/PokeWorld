@@ -3,7 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 
 
-interface ListedPokemons {
+export interface ListedPokemons {
   name: string;
   url: string;
 }
