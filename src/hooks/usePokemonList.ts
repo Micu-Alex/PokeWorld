@@ -16,7 +16,8 @@ const apiClient= new APIClient<ListedPokemons>("/pokemon")
     queryFn: ({pageParam}) => {return apiClient.getAll(pageParam); 
     },
     getNextPageParam: (lastPage) => {return lastPage.next
-    } 
+    } ,
+    keepPreviousData: true
     },
   )
 

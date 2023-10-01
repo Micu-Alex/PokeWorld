@@ -1,29 +1,22 @@
 import { LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../Utilities/stringUtils";
-import Pokemon from "../entities/Pokemon";
+import Pokemon, { Stat } from "../entities/Pokemon";
 
 interface Props {
   pokemon: Pokemon;
 }
 
-interface Stats {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-}
-
 const StatsDisplay = ({ pokemon }: Props) => {
-  const [filteredStats, setFilteredStats] = useState<Stats[]>([]);
+  const [filteredStats, setFilteredStats] = useState<Stat[]>([]);
 
   useEffect(() => {
     if (pokemon) {
       const statsToDisplay = ["hp", "attack", "defense", "speed"];
-      const filteredStats = pokemon!.stats.filter((stat) =>
+      const Stats = pokemon!.stats.filter((stat) =>
         statsToDisplay.includes(stat.stat.name)
       );
-      setFilteredStats(filteredStats);
+      setFilteredStats(Stats);
     }
   }, [pokemon]);
 

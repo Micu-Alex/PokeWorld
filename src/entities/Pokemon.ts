@@ -5,8 +5,8 @@ export default interface Pokemon {
   weight: number;
   sprites: {
     other: {
-      dreamWorld: {
-        frontDefault: string;
+      dream_world: {
+        front_default: string;
       };
     };
   };
@@ -15,8 +15,8 @@ export default interface Pokemon {
   abilities: Ability[];
 }
 
-interface Stat {
-  baseStat: number;
+export interface Stat {
+  base_stat: number;
   stat: {
     name: string;
   };
