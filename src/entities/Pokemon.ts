@@ -5,8 +5,8 @@ export default interface Pokemon {
   weight: number;
   sprites: {
     other: {
-      dreamWorld: {
-        frontDefault: string;
+      dream_world: {
+        front_default: string;
       };
     };
   };
