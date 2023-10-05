@@ -7,6 +7,7 @@ import TypeSelector from "./TypeSelector";
 import SearchContext from "../contexts/SearchContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { filterPokemonsByType } from "../Utilities/FilterPokemons";
+import { SearchPokemon } from "../Utilities/SearchPokemon";
 
 const PokemonGrid = () => {
   const [selectedType, setSelectedType] = useState<string>("");
@@ -23,7 +24,6 @@ const PokemonGrid = () => {
     }
     return pokemonList.pages.flatMap((page) => page.results);
   }, [pokemonList]);
-  console.log(allFetchedPokemons);
 
   const pokemons = usePokemon(allFetchedPokemons);
 
@@ -33,11 +33,7 @@ const PokemonGrid = () => {
 
   const filteredPokemons = filterPokemonsByType({ pokemons, selectedType });
 
-  const searchPokemon = searchText
-    ? filteredPokemons.filter((poke) =>
-        poke.data?.name.toLowerCase().includes(searchText.toLowerCase())
-      )
-    : filteredPokemons;
+  const searchPokemon = SearchPokemon({ filteredPokemons, searchText });
 
   const fetchedPokemonsCount =
     pokemonList?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
