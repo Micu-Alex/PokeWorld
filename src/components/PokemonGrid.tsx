@@ -29,11 +29,7 @@ const PokemonGrid = () => {
 
   const { searchText } = useContext(SearchContext);
 
-  const isLoading = pokemons.some((pokemon) => pokemon.isLoading);
-
   if (error) return null;
-
-  if (isLoading) return <CircularProgress />;
 
   const filteredPokemons = filterPokemonsByType({ pokemons, selectedType });
 
@@ -59,11 +55,13 @@ const PokemonGrid = () => {
           <TypeSelector setType={setSelectedType} type={selectedType} />
         </Grid>
         <Grid container spacing={5} padding={3}>
-          {searchPokemon?.map((pokemon) => (
-            <Grid key={pokemon.data?.id} item xs={12} sm={6} md={4} lg={2}>
-              <PokemonCard pokemon={pokemon.data!}></PokemonCard>
-            </Grid>
-          ))}
+          {searchPokemon
+            ?.filter((pokemon) => !pokemon.isLoading)
+            ?.map((pokemon) => (
+              <Grid key={pokemon.data?.id} item xs={12} sm={6} md={4} lg={2}>
+                <PokemonCard pokemon={pokemon.data!}></PokemonCard>
+              </Grid>
+            ))}
         </Grid>
       </Grid>
     </InfiniteScroll>
