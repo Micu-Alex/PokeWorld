@@ -6,8 +6,10 @@ import { useState, useContext, useMemo } from "react";
 import TypeSelector from "./TypeSelector";
 import SearchContext from "../contexts/SearchContext";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { filterPokemonsByType } from "../Utilities/FilterPokemons";
 
 const PokemonGrid = () => {
+  const [selectedType, setSelectedType] = useState<string>("");
   const {
     data: pokemonList,
     error,
@@ -25,8 +27,6 @@ const PokemonGrid = () => {
 
   const pokemons = usePokemon(allFetchedPokemons);
 
-  const [selectedType, setSelectedType] = useState<string>("");
-
   const { searchText } = useContext(SearchContext);
 
   const isLoading = pokemons.some((pokemon) => pokemon.isLoading);
@@ -35,17 +35,7 @@ const PokemonGrid = () => {
 
   if (isLoading) return <CircularProgress />;
 
-  const filteredPokemons =
-    selectedType === "All"
-      ? pokemons
-      : pokemons.filter((poke) => {
-          if (!selectedType) {
-            return true;
-          }
-          return poke.data?.types.some(
-            (type) => type.type.name === selectedType
-          );
-        });
+  const filteredPokemons = filterPokemonsByType({ pokemons, selectedType });
 
   const searchPokemon = searchText
     ? filteredPokemons.filter((poke) =>
