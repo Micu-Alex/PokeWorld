@@ -45,3 +45,7 @@ The project follows a modular structure to keep the code organized and maintaina
   - `hooks/`: Custom React hooks used for data fetching (e.g., `usePokemon.ts`).
   - `pages/`: Contains page components that represent different pages of the application.
   - `index.tsx`: The entry point of the application.
+
+### Try it yourself
+
+https://poke-world-9eyzmt31l-micu-alexs-projects.vercel.app/
