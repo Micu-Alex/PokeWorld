@@ -1,6 +1,12 @@
 # Pokémon React App
 
 Welcome to the Pokémon React App! This project showcases the usage of various technologies to create a simple application for fetching and displaying Pokémon data.
+### Try it yourself
+
+https://poke-world-9eyzmt31l-micu-alexs-projects.vercel.app/
+
+ We value your feedback and would appreciate it if you could report any issues or provide suggestions for improvements in the future,  
+ [submit an issue](https://github.com/Micu-Alex/PokeWorld/issues) on our GitHub repository.
 
 ## Technologies Used
 
@@ -46,6 +52,3 @@ The project follows a modular structure to keep the code organized and maintaina
   - `pages/`: Contains page components that represent different pages of the application.
   - `index.tsx`: The entry point of the application.
 
-### Try it yourself
-
-https://poke-world-9eyzmt31l-micu-alexs-projects.vercel.app/
